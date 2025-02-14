@@ -1,0 +1,6 @@
+[group_a/subgroup_1|group_b/subgroup_2]
+project_a|project_b
+project_c|project_d
+
+[group_c|group_d]
+subgroup_x/project_e|subgroup_y/project_f

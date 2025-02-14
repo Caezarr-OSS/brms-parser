@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]  # Run only on main branch
+  pull_request:
+    branches: [ main ]  # Run only on PRs to main
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.23.x']
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Run Tests
+        run: go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.txt
+          flags: unittests
+          name: codecov-go-${{ matrix.go-version }}

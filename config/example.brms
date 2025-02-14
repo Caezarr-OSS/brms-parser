@@ -1,0 +1,9 @@
+# BRMS configuration example with exclusions
+[group_a|group_b]
+project_a|           # project_a is excluded
+project_b|project_c  # project_b is mapped to project_c
+project_d|project_e  # project_d is mapped to project_e
+
+[tools|utils]
+tool_1|             # tool_1 is excluded
+tool_2|util_2       # tool_2 is mapped to util_2
