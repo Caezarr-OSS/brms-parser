@@ -1,6 +1,8 @@
 # BRMS
 Library to parse a specific syntax created to improve readability BRMS pronounced "Brems" stands for "Block Relation Mapping Syntax"
 
+![BRMS Logo](assets/img/SDG_logo.png)
+
 # BRMS Parser Documentation
 
 ## Introduction
